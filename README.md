@@ -1,7 +1,17 @@
 # Rice Cooker
 
-The Rice Cooker is a simple Scala program that simulates the behavior of a rice cooker. It allows you to plug and unplug the cooker, turn it on and off, and add rice and water for cooking.
+The Rice Cooker is a simple program that simulates the behavior of a rice cooker. It allows you to plug and unplug the cooker, turn it on and off, and add rice and water for cooking.
 
+## LINTER: 
+
+We use google typescript linter, you can install it [here](https://github.com/google/gts)
+
+You can run this command to run the linter
+
+
+```
+  npx gts lint main.ts riceCooker.ts
+```
 ## Usage
 
 1. **Installation**

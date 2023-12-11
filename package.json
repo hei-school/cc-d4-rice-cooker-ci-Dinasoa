@@ -1,0 +1,31 @@
+{
+  "name": "cc-d2-my-rice-cooker-dinasoa",
+  "version": "1.0.0",
+  "description": "Ceci est un programme qui simule les foncitonnalités d'un rice cooker, qui va seulement considerer  le riz comme aliment, and that is the main purpose of rice cooker despite that we can make some  noodles with it too.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "readline": "^1.3.0",
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "@types/node": "20.8.2",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "eslint": "^8.55.0",
+    "gts": "^5.2.0",
+    "typescript": "~5.2.0"
+  }
+}
