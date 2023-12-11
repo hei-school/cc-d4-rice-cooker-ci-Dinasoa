@@ -1,1 +1,56 @@
+# Rice Cooker
+
+The Rice Cooker is a simple program that simulates the behavior of a rice cooker. It allows you to plug and unplug the cooker, turn it on and off, and add rice and water for cooking.
+
+## LINTER: 
+
+We use rubocop, you can install it [here](https://docs.rubocop.org/rubocop/installation.html), then you can run this command: 
+```
+  rubocop
+```
+## Usage
+
+1. **Installation**
+
+    You can find installation instruction [here](https://docs.rubocop.org/rubocop/installation.html)
+
+2. **Run the application**
+
+   You just have to run these commands: 
+
+      ```
+      ruby main.rb
+      ```
+
+## Features
+
+```
+    1. Plug/Unplug: Control the power supply to the Rice Cooker.
+    2. Turn On/Turn Off: Activate or deactivate the cooking process.
+    3. Add Rice/Water: Insert rice or water into the Rice Cooker for cooking.
+    4. Get Status: View the current status of the Rice Cooker, including power state and inserted quantities.
+```
+
+## BUGS: 
+* This code still need refactor because some methods are too long, and the linter doesn't pass.
+
+## HOW TO COOK RICE
+
+#### To cook rice, follow these steps:
+
+      Plug in the rice cooker (1).
+      Add rice or water (2). 
+      Show status (3) to ensure everything is set.
+      Turn on the rice cooker (4) to start cooking.
+      When it's done you can turn off and unplug.
+
+## Constraints
+
+__Capacity__: The Rice Cooker has a maximum capacity of 900 units (e.g., grams or milliliters) for both rice and water combined.
+
+__The quantity__ of water should be greater than the rice
+Power On: The Rice Cooker must be plugged in, turned on, and have rice and water inserted to start cooking.
+
+__Space__: Ensure that the quantity of rice and water does not exceed the capacity of the Rice Cooker.
+
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/PHq8Kfj_)
