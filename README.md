@@ -2,6 +2,16 @@
 
 The Rice Cooker is a simple Scala program that simulates the behavior of a rice cooker. It allows you to plug and unplug the cooker, turn it on and off, and add rice and water for cooking.
 
+
+## LINTER
+
+We use scalastyle for linter, you can see the setup [here](http://www.scalastyle.org/command-line.html?fbclid=IwAR0O7adPfq0k0HlLDaqTPDIF-1JmbBSrvUkUmEPsveRCbKmh3Rn7HRVrgm0)
+
+Then execute this command: 
+
+```
+java -jar [downloaded-jar-version] --config scalastyle-config.xml .
+```
 ## Usage
 
 1. **Installation**
