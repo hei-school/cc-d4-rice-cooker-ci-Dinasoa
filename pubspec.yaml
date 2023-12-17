@@ -1,0 +1,7 @@
+name: rpc_examples
+
+dev_dependencies:
+  test: any
+
+environment:
+  sdk: '^2.15.1'
