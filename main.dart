@@ -1,6 +1,8 @@
 import 'dart:io';
 import 'riceCooker.dart';
 
+// comment test
+
 void main() {
   stdout.write('Is the electricity cut off? (1 for Yes, 2 for No)\n'
       '1- Yes\n'
