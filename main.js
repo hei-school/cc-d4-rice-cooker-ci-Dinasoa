@@ -1,34 +1,24 @@
-import { RiceCooker } from "./riceCooker";
-import * as readline from "readline-sync";
-
-export function main() {
-    const electricity = readline.question(`Is the electricity cut off? (1 for Yes, 2 for No)
-        1- Yes
-        2- No
-    `);
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.userPrompt = exports.main = void 0;
+var riceCooker_1 = require("./riceCooker");
+var readline = require("readline-sync");
+function main() {
+    var electricity = readline.question("Is the electricity cut off? (1 for Yes, 2 for No)\n        1- Yes\n        2- No\n    ");
     if (electricity === "1") {
         console.log("Mandreta afo na gaz fa tsy poinsa leh rice cooker vo tsisy jiro.");
-    } else if (electricity === "2") {
-        const riceCooker = new RiceCooker();
+    }
+    else if (electricity === "2") {
+        var riceCooker = new riceCooker_1.RiceCooker();
         userPrompt(riceCooker);
-    } else {
+    }
+    else {
         console.log("Choose a valid choice.");
     }
 }
-
-export function userPrompt(riceCooker: RiceCooker): void {
-    const userChoice = readline.question(`RICE COOKER:
-        1- Plug in
-        2- Unplug
-        3- Turn on
-        4- Turn off
-        5- Add rice
-        6- Add water
-        7- Show status
-        8- Quit
-    `);
-
+exports.main = main;
+function userPrompt(riceCooker) {
+    var userChoice = readline.question("RICE COOKER:\n        1- Plug in\n        2- Unplug\n        3- Turn on\n        4- Turn off\n        5- Add rice\n        6- Add water\n        7- Show status\n        8- Quit\n    ");
     switch (userChoice) {
         case "1":
             riceCooker.plug();
@@ -61,5 +51,5 @@ export function userPrompt(riceCooker: RiceCooker): void {
         userPrompt(riceCooker);
     }
 }
-
+exports.userPrompt = userPrompt;
 main();

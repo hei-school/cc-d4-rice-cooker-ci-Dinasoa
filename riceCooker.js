@@ -1,15 +1,9 @@
-import * as readlineSync from 'readline-sync';
-
-export class RiceCooker {
-    public isPlugged: boolean;
-    public powerOn: boolean;
-    public riceInserted: boolean;
-    public waterInserted: boolean;
-    public riceQuantity: number;
-    public waterQuantity: number;
-    public capacity: number;
-
-    constructor() {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.RiceCooker = void 0;
+var readlineSync = require("readline-sync");
+var RiceCooker = /** @class */ (function () {
+    function RiceCooker() {
         this.isPlugged = false;
         this.powerOn = false;
         this.riceInserted = false;
@@ -18,117 +12,129 @@ export class RiceCooker {
         this.waterQuantity = 0;
         this.capacity = 900;
     }
- 
-    plug(): void {
+    RiceCooker.prototype.plug = function () {
         if (this.isPlugged) {
             console.log("Rice Cooker is already plugged in.");
-        } else {
+        }
+        else {
             this.isPlugged = true;
             console.log("Rice Cooker plugged in.");
         }
-    }
-
-    unplug(): void {
+    };
+    RiceCooker.prototype.unplug = function () {
         if (!this.isPlugged) {
             console.log("The rice cooker is already unplugged.");
-        } else {
+        }
+        else {
             this.isPlugged = false;
             console.log("The rice cooker has been unplugged.");
         }
-    }
-
-    turnOn(): void {
+    };
+    RiceCooker.prototype.turnOn = function () {
         if (this.powerOn) {
             console.log("The Rice Cooker is already on.");
-        } else if (!this.isPlugged) {
+        }
+        else if (!this.isPlugged) {
             console.log("The rice cooker should be plugged before turning on.");
-        } else if (!this.riceInserted) {
+        }
+        else if (!this.riceInserted) {
             console.log("You should insert rice.");
-        } else if (!this.waterInserted) {
+        }
+        else if (!this.waterInserted) {
             console.log("You should insert water.");
-        } else {
+        }
+        else {
             this.powerOn = true;
             console.log("Rice Cooker turned on, start cooking.");
         }
-    }
-
-    turnOff(): void {
+    };
+    RiceCooker.prototype.turnOff = function () {
         if (!this.powerOn) {
             console.log("The Rice Cooker is already off.");
-        } else {
+        }
+        else {
             this.powerOn = false;
             console.log("Rice Cooker turned off.");
         }
-    }
-
-    addRice(): void {
+    };
+    RiceCooker.prototype.addRice = function () {
         if (this.riceInserted) {
             console.log("Rice is already present.");
-        } else {
-            const quantityStr: string = readlineSync.question("Rice quantity: ");
-            const quantity: number = parseInt(quantityStr, 10);
-    
+        }
+        else {
+            var quantityStr = readlineSync.question("Rice quantity: ");
+            var quantity = parseInt(quantityStr, 10);
             if (this.waterInserted) {
                 if (quantity <= this.waterQuantity && (quantity + this.riceQuantity) <= this.capacity) {
                     this.riceQuantity = quantity;
                     this.riceInserted = true;
                     console.log("Rice has been added.");
-                } else {
+                }
+                else {
                     console.log("Not enough space or insufficient water quantity.");
                 }
-            } else {
+            }
+            else {
                 if (quantity <= this.capacity) {
                     this.riceQuantity = quantity;
                     this.riceInserted = true;
                     console.log("Rice has been added.");
-                } else {
+                }
+                else {
                     console.log("Not enough space.");
                 }
             }
         }
-    }
-
-    addWater(): void {
+    };
+    RiceCooker.prototype.addWater = function () {
         if (this.waterInserted) {
             console.log("Water is already present.");
-        } else {
-            const quantityStr: string = readlineSync.question("Water quantity: ");
-            const quantity: number = parseInt(quantityStr, 10);
-    
+        }
+        else {
+            var quantityStr = readlineSync.question("Water quantity: ");
+            var quantity = parseInt(quantityStr, 10);
             if (this.riceInserted) {
                 if (quantity <= this.capacity - this.riceQuantity && quantity <= this.capacity) {
                     this.waterQuantity = quantity;
                     this.waterInserted = true;
                     console.log("Water has been added.");
-                } else {
+                }
+                else {
                     console.log("Not enough space or insufficient capacity for water with current rice quantity.");
                 }
-            } else {
+            }
+            else {
                 if (quantity <= this.capacity) {
                     this.waterQuantity = quantity;
                     this.waterInserted = true;
                     console.log("Water has been added.");
-                } else {
+                }
+                else {
                     console.log("Not enough space.");
                 }
             }
         }
-    }
-
-    getStatus(): void {
-        if(this.isPlugged){
-            console.log("Plugged.")
-        } if (!this.isPlugged){
-            console.log("Unplugged. ")
-        } if(this.powerOn){
-            console.log("ON.")
-        } if(!this.powerOn) {
-            console.log("OFF")
-        } if(this.riceInserted){
-            console.log(`Rice inserted: ${this.riceQuantity}`)
-        } if (this.waterInserted){
-            console.log(`Water inserted: ${this.waterInserted}`)
+    };
+    RiceCooker.prototype.getStatus = function () {
+        if (this.isPlugged) {
+            console.log("Plugged.");
         }
-    }
-
-}
+        if (!this.isPlugged) {
+            console.log("Unplugged. ");
+        }
+        if (this.powerOn) {
+            console.log("ON.");
+        }
+        if (!this.powerOn) {
+            console.log("OFF");
+        }
+        if (this.riceInserted) {
+            console.log("Rice inserted: ".concat(this.riceQuantity));
+        }
+        if (this.waterInserted) {
+            console.log("Water inserted: ".concat(this.waterInserted));
+        }
+    };
+    return RiceCooker;
+}());
+exports.RiceCooker = RiceCooker;
