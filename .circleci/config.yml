@@ -1,0 +1,37 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: hseeberger/scala-sbt:11.0.12_1.5.5_2.13.6
+
+    steps:
+      - checkout
+
+  test:
+    docker:
+      - image: hseeberger/scala-sbt:11.0.12_1.5.5_2.13.6
+
+    steps:
+      - checkout
+
+      - run:
+          name: Clean
+          command: sbt clean
+
+      - run:
+          name: Run Scala Tests
+          command: sbt test
+
+workflows:
+  version: 2
+  build_and_test_scala:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - feature/scala
+      - test:
+          requires:
+            - build
